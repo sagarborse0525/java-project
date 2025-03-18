@@ -1,11 +1,8 @@
 version: 0.2
 phases:
-  install:
-    commands:
-      - echo installation phase
-      - mvn clean install
   pre_build:
     commands:
+      - mvn clean install
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 396608812584.dkr.ecr.us-east-2.amazonaws.com
