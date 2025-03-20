@@ -19,6 +19,8 @@ phases:
       - echo Post build phase start `date`
       - pwd
       - ls -la
+      - rm -rf lambda.zip
+      - ls -la
 
 artifacts:
   files:
