@@ -16,7 +16,7 @@ phases:
       - python deploy_lambda.py
   post_build:
     commands:
-      - echo "Post build phase start `date`
+      - echo Post build phase start `date`
       - pwd
       - ls -la
 
