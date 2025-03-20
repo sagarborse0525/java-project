@@ -14,6 +14,12 @@ phases:
       - zip -r lambda.zip lambda_function.py
       - echo "Deploying Lambda function using boto3"
       - python deploy_lambda.py
+  post_build:
+    commands:
+      - echo "Post build phase start `date`
+      - pwd
+      - ls -la
+
 artifacts:
   files:
     - lambda.zip
