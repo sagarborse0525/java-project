@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+  pre_build:
+    commands:
+      - echo "Installing boto3 if not available"
+      - pip install boto3
+  build:
+    commands:
+      - echo "Zipping Lambda code"
+      - zip -r lambda.zip lambda_function.py
+      - echo "Deploying Lambda function using boto3"
+      - python deploy_lambda.py
+artifacts:
+  files:
+    - lambda.zip
+
